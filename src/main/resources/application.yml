@@ -1,4 +1,4 @@
-# logging.config: classpath:log4j2.xml
+logging.config: classpath:log4j2.xml
 
 # jdbc-DruidDataSource连接池配置
 sbp.datasource:
