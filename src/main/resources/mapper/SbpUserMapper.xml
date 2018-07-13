@@ -285,4 +285,21 @@
       update_at = #{updateAt,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <insert id="insertList" parameterType="java.util.List">
+    insert into sbp_user (id, nick_name, password,
+    mobile, create_at, update_at
+    ) values
+    <foreach collection="list" item="item" index= "index" separator =",">
+      (
+      #{item.id}, #{item.nickName}, #{item.password},
+      #{item.mobile}, #{item.createAt}, #{item.updateAt}
+      )
+    </foreach>
+  </insert>
+
+  <select id="getAll" resultMap="BaseResultMap">
+    SELECT * FROM sbp_user
+  </select>
+
 </mapper>

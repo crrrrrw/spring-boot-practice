@@ -94,4 +94,8 @@ public interface SbpUserMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SbpUser record);
+
+    List<SbpUser> getAll();
+
+    int insertList(List<SbpUser> list);
 }
