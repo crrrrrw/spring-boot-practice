@@ -3,6 +3,8 @@ package com.crw.mapper;
 import com.crw.App;
 import com.crw.model.SbpUser;
 import com.crw.model.SbpUserExample;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,6 +54,17 @@ public class SbpUserMapperTest {
         criteria.andMobileEqualTo("11100001001");
         List<SbpUser> users = sbpUserMapper.selectByExample(example);
         Assert.assertEquals(users.size(), 1);
+    }
+
+    @Test
+    @Rollback
+    public void pageByPageHelper() throws Exception {
+        PageHelper.startPage(1, 5);
+        List<SbpUser> users = sbpUserMapper.getAll();
+        Page<SbpUser> page = (Page<SbpUser>) users;
+        System.out.println("total count :" + page.getTotal());
+        System.out.println("pages :" + page.getPages());
+        System.out.println("data :" + page.getResult());
     }
 
 }
