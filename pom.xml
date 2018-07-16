@@ -82,6 +82,12 @@
             <version>1.2.3</version>
         </dependency>
 
+        <!-- amqp,用于支持RabbitMQ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
