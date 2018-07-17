@@ -11,10 +11,10 @@ import java.util.Date;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = App.class)
-public class HelloRabbitMQSenderTest {
+public class HelloActiveMQSenderTest {
 
     @Autowired
-    private HelloRabbitMQSender sender;
+    private HelloActiveMQSender sender;
 
     @Test
     public void sendHello() {

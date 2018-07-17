@@ -1,5 +1,6 @@
 package com.crw.conf;
 
+import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,4 +12,8 @@ public class MessageQueueConfig {
         return new org.springframework.amqp.core.Queue("hello");
     }
 
+    @Bean
+    public javax.jms.Queue helloQueueByActiveMQ() {
+        return new ActiveMQQueue("hello");
+    }
 }
