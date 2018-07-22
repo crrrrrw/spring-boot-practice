@@ -24,6 +24,8 @@ sbp.datasource:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   configuration.mapUnderscoreToCamelCase: true
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # 分页配置
 pagehelper:
@@ -39,6 +41,7 @@ spring:
     port: 5672
     username: guest
     password: guest
+
 # activeMQ
   activemq:
     broker-url: tcp://127.0.0.1:61616
@@ -49,3 +52,7 @@ spring:
       enabled: false
     packages:
       trust-all: true
+
+# cache
+  cache:
+    type: guava
