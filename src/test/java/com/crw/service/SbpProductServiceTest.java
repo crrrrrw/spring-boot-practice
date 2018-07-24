@@ -29,7 +29,7 @@ public class SbpProductServiceTest {
     @Rollback
     public void insert() {
         long now = System.currentTimeMillis();
-        Integer insert = sbpProductService.insert(SbpProduct.builder()
+        Long insert = sbpProductService.insert(SbpProduct.builder()
                 .aliasName("thinking in java").fullName("java编程思想")
                 .code("BK100001").originalPrice(new BigDecimal(86))
                 .vipPrice(new BigDecimal(75)).storage(300)

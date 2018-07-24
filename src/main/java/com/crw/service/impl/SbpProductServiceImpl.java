@@ -20,8 +20,9 @@ public class SbpProductServiceImpl implements SbpProductService {
 
     @Override
     @CachePut
-    public Integer insert(SbpProduct sbpProduct) {
-        return sbpProductMapper.insert(sbpProduct);
+    public Long insert(SbpProduct sbpProduct) {
+        sbpProductMapper.insert(sbpProduct);
+        return sbpProduct.getId();
     }
 
     @Override

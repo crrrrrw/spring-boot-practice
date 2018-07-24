@@ -7,11 +7,15 @@ import java.util.List;
 
 public interface SbpUserService {
 
-    int insert(SbpUser user);
+    SbpUser insert(SbpUser user);
 
-    int update(SbpUser user);
+    SbpUser update(SbpUser user);
 
     int insertList(List<SbpUser> list);
 
     Page<SbpUser> getListPageInfo(int pageNo, int pageSize);
+
+    boolean deleteById(Long id);
+
+    SbpUser getObjectById(Long id);
 }

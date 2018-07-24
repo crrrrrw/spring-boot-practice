@@ -4,7 +4,7 @@ import com.crw.model.SbpProduct;
 
 public interface SbpProductService {
 
-    Integer insert(SbpProduct sbpProduct);
+    Long insert(SbpProduct sbpProduct);
 
     boolean update(SbpProduct sbpProduct);
 

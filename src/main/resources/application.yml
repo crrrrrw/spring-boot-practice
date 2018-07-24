@@ -55,4 +55,17 @@ spring:
 
 # cache
   cache:
-    type: guava
+    type: redis
+
+# redis
+  redis:
+    database: 2
+    host: 127.0.0.1
+    port: 6379
+    password:
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
