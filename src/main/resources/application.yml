@@ -35,37 +35,37 @@ pagehelper:
   params: count=countSql
 
 # rabbitMQ
-spring:
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
+spring.rabbitmq:
+  host: 127.0.0.1
+  port: 5672
+  username: guest
+  password: guest
 
 # activeMQ
-  activemq:
-    broker-url: tcp://127.0.0.1:61616
-    user: admin
-    password: admin
-    in-memory: true
-    pool:
-      enabled: false
-    packages:
-      trust-all: true
+spring.activemq:
+  broker-url: tcp://127.0.0.1:61616
+  user: admin
+  password: admin
+  in-memory: true
+  pool:
+    enabled: false
+  packages:
+    trust-all: true
 
 # cache
-  cache:
-    type: redis
+spring.cache:
+  type: redis
 
 # redis
-  redis:
-    database: 2
-    host: 127.0.0.1
-    port: 6379
-    password:
-    pool:
-      max-active: 8
-      max-wait: -1
-      max-idle: 8
-      min-idle: 0
-    timeout: 0
+spring.redis:
+  database: 2
+  host: 127.0.0.1
+  port: 6379
+  password:
+  pool:
+    max-active: 8
+    max-wait: -1
+    max-idle: 8
+    min-idle: 0
+  timeout: 0
+  enabled: false

@@ -1,9 +1,11 @@
 package com.crw.conf;
 
 import org.apache.activemq.command.ActiveMQQueue;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+@ConditionalOnExpression("${spring.activemq.enabled:false}")
 @Configuration
 public class MessageQueueConfig {
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.cache.CacheBuilder;
 import org.springframework.boot.autoconfigure.cache.CacheManagerCustomizer;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.guava.GuavaCacheManager;
@@ -20,6 +21,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
+@ConditionalOnExpression("${spring.redis.enabled:false}")
 @EnableCaching
 @Configuration
 public class CacheConfig {
@@ -72,7 +74,7 @@ public class CacheConfig {
     @Bean
     public CacheManagerCustomizer redisCacheManagerCustomizer() {
         return (CacheManagerCustomizer<RedisCacheManager>) cacheManager -> {
-            cacheManager.setDefaultExpiration(600L);// 默认过期时间，单位秒
+            cacheManager.setDefaultExpiration(60L);// 默认过期时间，单位秒
             Map<String, Long> expires = new ConcurrentHashMap<>(2);
             expires.put("userCache", 2000L); // 指定 cacheName 缓存时间
             cacheManager.setExpires(expires);
