@@ -8,3 +8,4 @@
 - 集成 activeMQ
 - 集成 redis
 - spring cache使用
+- 集成mail

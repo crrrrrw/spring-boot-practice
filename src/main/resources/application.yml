@@ -69,3 +69,12 @@ spring.redis:
     min-idle: 0
   timeout: 0
   enabled: false
+
+
+# mail
+spring.mail:
+  host: smtp.qq.com
+  username: 120755274@qq.com
+  password: 此处需要是授权码
+  protocol: smtp
+  default-encoding: UTF-8
