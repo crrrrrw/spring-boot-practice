@@ -1,5 +1,8 @@
 logging.config: classpath:log4j2.xml
 
+# 端口号
+server.port: 8081
+
 # jdbc-DruidDataSource连接池配置
 sbp.datasource:
   type: com.alibaba.druid.pool.DruidDataSource
@@ -78,3 +81,17 @@ spring.mail:
   password: 此处需要是授权码
   protocol: smtp
   default-encoding: UTF-8
+
+# swagger配置
+swagger:
+  title: API接口服务平台
+  description: 本平台是XXXX平台。实现了XXX功能。
+  license:
+  licenseUrl:
+  termsOfServiceUrl:
+  version: 1.0.0
+  basePackage: com.crw
+
+# swagger文档路由
+springfox.documentation.swagger.v2.path: /api-docs
+# 访问swagger-ui地址: http://host:port/swagger-ui.html
