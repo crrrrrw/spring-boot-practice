@@ -95,3 +95,14 @@ swagger:
 # swagger文档路由
 springfox.documentation.swagger.v2.path: /api-docs
 # 访问swagger-ui地址: http://host:port/swagger-ui.html
+
+# stream 消息驱动
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          content-type: application/json
+          destination: raw-sensor-data
+        output:
+          destination: raw-sensor-data
